@@ -5,6 +5,10 @@ function insertionSort(array) {
 	 ** is bigger
 	 */
 
+	//  while (array.length > 0) {
+		
+	//  }
+
 	return array;
 }
 
