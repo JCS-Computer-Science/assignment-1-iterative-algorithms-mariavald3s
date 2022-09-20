@@ -12,24 +12,25 @@ function binarySearch(array, searchTerm) {
   let start = 0;
   let end = array.length;
 
-  let arrayTerms = end;
+  let arrayTerms;
 
+  while (array[arrayTerms] != searchTerm) {
+    arrayTerms = Math.floor((start + end) / 2);
 
-    while (array[arrayTerms] != searchTerm) {
-      start = Math.floor((start + end) / 2);
-
-      if (array[arrayTerms] > searchTerm) {
-		  start = arrayTerms;
-        // array.splice(arrayTerms, arrayTerms);
-      } else if (array[arrayTerms] < searchTerm) {
-		  end = arrayTerms;
-        //delete zero to array terms
-        // array.splice(0, arrayTerms);
-      } 
-	  else if (array[arrayTerms] == searchTerm) {
-        result = arrayTerms;
-      }
+    if (array[arrayTerms] > searchTerm) {
+      end = arrayTerms;
+      
+    } else if (array[arrayTerms] < searchTerm) {
+      start = arrayTerms;
+    
+    } else if (array[arrayTerms] == searchTerm) {
+      result = arrayTerms;
     }
+  }
+
+  // if (array[arrayTerms] == searchTerm){
+  //   result = arrayTerms;
+  // }
 
   return result;
 }
