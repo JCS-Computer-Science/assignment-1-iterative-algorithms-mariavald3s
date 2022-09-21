@@ -9,25 +9,32 @@ function bubbleSort(array) {
     ** cycle without needing any swaps
     */
 
-  let sortedArray = [];
+
 
   for (var i = 0; i < array.length; i++) {
-
-    let current = array[i];
-    let secondIndex;
-    for(secondIndex = i + 1; secondIndex < (array.length - i - 1); secondIndex++) {
-    if (array[secondIndex] > array[secondIndex + 1]) {
-      array[secondIndex + 1] = array[secondIndex];
-      // array.splice( i, 1, current);
-      // array.splice(i + 1, 0, array[i + 1]);
-    }
+ 
+    for (var iSecond = 0; iSecond < ( array.length - i -1 ); iSecond++) {
+     
+      if (array[iSecond] > array[iSecond+1]) {
+         
+        [array[iSecond], array[iSecond + 1]] = [array[iSecond + 1], array[iSecond]];
+        
+      }
     }
   }
 
-      //for i -> 0  to array length
-        // for j -> 0  to (arrayLenfth - i - 1)
-        // if array[j] > array [j + 1]
-          //swap (array[j], array[j+ 1])
+  // for (var i = 0; i < array.length; i++) {
+
+  //   let current = array[i];
+  //   let secondIndex;
+  //   for(secondIndex = i + 1; secondIndex < (array.length - i - 1); secondIndex++) {
+  //   if (array[secondIndex] > array[secondIndex + 1]) {
+  //     array[secondIndex + 1] = array[secondIndex];
+  //     // array.splice( i, 1, current);
+  //     // array.splice(i + 1, 0, array[i + 1]);
+  //   }
+  //   }
+  // }
 
 
   // for (var i = 0; i < array.length; i++) {
